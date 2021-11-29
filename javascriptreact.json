@@ -1,0 +1,106 @@
+{
+	// Place your snippets for javascriptreact here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('${1:label}',${1:label});"
+		],
+		"description": "Log output to console"
+	},
+	"Import React Class Component": {
+		"prefix": "rcch",
+		"body": [
+			"import {Component} from 'react';",
+			"",
+			"export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<div>",
+			"\t\t\t\t<h3>${1:${TM_FILENAME_BASE}}</h3>",
+			"\t\t\t</div>",
+			"\t\t)",
+			"\t}",
+			"}",
+			""
+		],
+		"description": "Create react class component"
+	},
+	"Import React Class Component Bottom Export": {
+		"prefix": "rcche",
+		"body": [
+			"import {Component} from 'react';",
+			"",
+			"class ${1:${TM_FILENAME_BASE}} extends Component {",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<div>",
+			"\t\t\t\t<h3>${1:${TM_FILENAME_BASE}}</h3>",
+			"\t\t\t</div>",
+			"\t\t)",
+			"\t}",
+			"}",
+			"",
+			"export default ${1:${TM_FILENAME_BASE}}"
+		],
+		"description": "Create react class component"
+	},
+	"Import React Function Component": {
+		"prefix": "rfc",
+		"body": [
+			"export default function ${1:${TM_FILENAME_BASE}} (props) {",
+			"\treturn (",
+			"\t\t<div>",
+			"\t\t\t<h3>${1:${TM_FILENAME_BASE}}</h3>",
+			"\t\t</div>",
+			"\t)",
+			"}",
+			""
+		],
+		"description": "Create react function component"
+	},
+	"Import React Function Component Bottom Export": {
+		"prefix": "rfce",
+		"body": [
+			"function ${1:${TM_FILENAME_BASE}} (props) {",
+			"\treturn (",
+			"\t\t<div>",
+			"\t\t\t<h3>${1:${TM_FILENAME_BASE}}</h3>",
+			"\t\t</div>",
+			"\t)",
+			"}",
+			"",
+			"export default ${1:${TM_FILENAME_BASE}}"
+		],
+		"description": "Create react function component"
+	},
+	"Export Default Function": {
+		"prefix": "edf",
+		"body": [
+			"export default function ${1:${TM_FILENAME_BASE}} (params) {",
+			"\treturn (",
+			"\t\t",
+			"\t)",
+			"}",
+			""
+		],
+		"description": "Export default function"
+	},
+	"Class Component Constructor": {
+		"prefix": "cons",
+		"body": [
+			"constructor(props){",
+			"\tsuper(props);",
+			"",
+			"\tthis.state={",
+			"\t\t${1:label}",
+			"\t}",
+			"",
+			"}"
+		],
+		"description": "class component constructor"
+	},
+}
