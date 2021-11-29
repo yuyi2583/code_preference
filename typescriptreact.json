@@ -1,0 +1,94 @@
+{
+	// Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Model": {
+		"prefix": "model",
+		"body": [
+			"import { Effect, Reducer } from 'umi';",
+			"",
+			"export interface ${1:${TM_FILENAME_BASE}}ModelState { };",
+			"",
+			"export interface ${1:${TM_FILENAME_BASE}}ModelType {",
+			"\tnamespace: '${2:${TM_FILENAME_BASE}}';",
+			"\tstate: ${1:${TM_FILENAME_BASE}}ModelState;",
+			"\teffects: {",
+			"\t\tfetch: Effect;",
+			"\t};",
+			"\treducers: {",
+			"\t\tsave: Reducer<${1:${TM_FILENAME_BASE}}ModelState>;",
+			"\t};",
+			"}",
+			"",
+			"const ${1:${TM_FILENAME_BASE}}Model: ${1:${TM_FILENAME_BASE}}ModelType = {",
+			"\tnamespace: '${2:${TM_FILENAME_BASE}}',",
+			"\tstate: {},",
+			"\teffects: {",
+			"\t\t*fetch({ payload }, { call, put }) {",
+			"\t\t\tyield put({ type: 'save' });",
+			"\t\t}",
+			"\t},",
+			"\treducers: {",
+			"\t\tsave(state, action) {",
+			"\t\t\treturn { ...state, ...action.payload };",
+			"\t\t}",
+			"\t},",
+			"};",
+			"export default ${1:${TM_FILENAME_BASE}}Model;",
+		]
+	},
+  "TS Function Component": {
+		"prefix": "rfch",
+		"body": [
+			"import { useEffect } from 'react';",
+			"",
+			"interface ${1:${TM_FILENAME_BASE}}Props { }",
+			"",
+			"const ${1:${TM_FILENAME_BASE}}: React.FC<${1:${TM_FILENAME_BASE}}Props> = props => {",
+			"",
+			"\tuseEffect(() => { }, []);",
+			"",
+			"\treturn (<div>${1:${TM_FILENAME_BASE}}</div>)",
+			"};",
+			"",
+			"export default ${1:${TM_FILENAME_BASE}};"
+		],
+		"description": "TS Function Component"
+	},
+	"Import React Class Component Bottom Export": {
+		"prefix": "rcche",
+		"body": [
+			"import { Component } from 'react';",
+			"import styles from './index.less';",
+			"",
+			"interface ${1:${TM_FILENAME_BASE}}Props { }",
+			"",
+			"interface ${1:${TM_FILENAME_BASE}}State { };",
+			"",
+			"class ${1:${TM_FILENAME_BASE}} extends Component<${1:${TM_FILENAME_BASE}}Props, ${1:${TM_FILENAME_BASE}}State>{",
+			"\tstate: ${1:${TM_FILENAME_BASE}}State = {};",
+			"",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<div className={styles.main}>",
+			"\t\t\t\t${1:${TM_FILENAME_BASE}}",
+			"\t\t\t</div>",
+			"\t\t)",
+			"\t}",
+			"}",
+			"",
+			"export default ${1:${TM_FILENAME_BASE}};",
+		],
+		"description": "Create react class component"
+	},
+}
